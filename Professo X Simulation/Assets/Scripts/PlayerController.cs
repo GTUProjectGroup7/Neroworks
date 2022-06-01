@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isMoveable && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isMoveable && Input.GetKey(KeyCode.UpArrow))
         {
             isMovingForward = true;
             isMovingBack = false;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             isTurningLeft = false;
             StartCoroutine("wait");
         }
-        else if (isMoveable && Input.GetKeyDown(KeyCode.DownArrow))
+        else if (isMoveable && Input.GetKey(KeyCode.DownArrow))
         {
             isMovingForward = false;
             isMovingBack = true;
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             isTurningLeft = false;
             StartCoroutine("wait");
         }
-        else if (isMoveable && Input.GetKeyDown(KeyCode.RightArrow))
+        else if (isMoveable && Input.GetKey(KeyCode.RightArrow))
         {
             isMovingForward = false;
             isMovingBack = false;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             isTurningLeft = false;
             StartCoroutine("wait");
         }
-        else if (isMoveable && Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (isMoveable && Input.GetKey(KeyCode.LeftArrow))
         {
             isMovingForward = false;
             isMovingBack = false;
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator wait()
     {
         isMoveable = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         isMoveable = true;
     }
  }
